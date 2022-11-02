@@ -16,7 +16,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Create a new wallet using Ethers
     let wallet: Wallet<SigningKey> = MnemonicBuilder::<English>::default()
         .word_count(12)
-
+        // NEVER Hardcode your seed phrase OR private key, it provides unrestricted access to your wallet. Use environment variables and never push your .env files
         .phrase("Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster")
         .build()?;
 
