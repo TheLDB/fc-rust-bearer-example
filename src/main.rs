@@ -16,7 +16,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Create a new wallet using Ethers
     let wallet: Wallet<SigningKey> = MnemonicBuilder::<English>::default()
         .word_count(12)
-        // Never hardcode recovery phrases or secret keys, they grant FULL access to your wallet
+
         .phrase("Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster Farcaster")
         .build()?;
 
@@ -44,7 +44,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let base64_signature = base64::encode(arrayify);
 
     // Format the signature to be a proper bearer token
-    let bearer = format!("eip191:{}", base64_signature);
+    let bearer = format!("Bearer eip191:{}", base64_signature);
 
     println!("{}", bearer);
 
