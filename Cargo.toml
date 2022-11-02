@@ -2,7 +2,37 @@
 name = "farcaster-rust-bearer-example"
 version = "0.1.0"
 edition = "2021"
+authors = ["Landon Boles"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+[dependencies.cjson]
+# Use this to canonicalize the JSON structs in a crypto-safe way
+version = "0.1.2"
+
+[dependencies.serde_json]
+# Construct JSON values and structs for cjson
+version = "1.0.87"
+
+[dependencies.ethers]
+# Ethereum library
+version = "1.0.0"
+
+[dependencies.tokio]
+# Async runtime
+version = "1.21.2"
+features = ["full"]
+
+[dependencies.base64]
+# Base64 encoding
+version = "0.13.1"
+
+[dependencies.hex]
+# Hex encoding
+version = "0.4.3"
+
+[dependencies.chrono]
+# Generate timestamps and expiration times
+version = "0.4.22"
